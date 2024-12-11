@@ -2,7 +2,6 @@ package ppm
 
 import (
 	"fmt"
-	"math"
 
 	"github.com/Lunarisnia/vecm"
 )
@@ -32,11 +31,11 @@ func (p *PPM) Draw(color vecm.Vector3f) {
 		return
 	}
 	c := vecm.Vector3f{
-		X: math.Round(color.X * 255.0),
-		Y: math.Round(color.Y * 255.0),
-		Z: math.Round(color.Z * 255.0),
+		X: color.X * 255.0,
+		Y: color.Y * 255.0,
+		Z: color.Z * 255.0,
 	}
 
-	fmt.Printf("%v %v %v\n", c.X, c.Y, c.Z)
+	fmt.Printf("%v %v %v\n", int(c.X), int(c.Y), int(c.Z))
 	p.pixelIndex++
 }
