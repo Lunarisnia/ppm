@@ -27,7 +27,7 @@ func CreateImage(width int, height int) *PPM {
 }
 
 func (p *PPM) Draw(color vecm.Vector3f) {
-	if p.pixelIndex <= p.imageSize {
+	if p.pixelIndex >= p.imageSize {
 		return
 	}
 	c := vecm.Vector3f{
